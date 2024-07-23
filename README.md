@@ -1,5 +1,7 @@
 # Flowchart for Vue3
 
+<img width="800" src="./screenshot.png">
+
 Fork from [Flowchart-vue](https://github.com/joyceworks/flowchart-vue), original README click [here](README.old.md).
 
 ## Changes
@@ -12,6 +14,13 @@ Fork from [Flowchart-vue](https://github.com/joyceworks/flowchart-vue), original
 - [x] lint, format with biome
 
 ## Usage
+
+```sh
+bun i 
+bun run dev
+```
+
+## Demo
 
 See [demo/App.vue](./demo/App.vue)
 
