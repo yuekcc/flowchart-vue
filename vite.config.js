@@ -9,6 +9,7 @@ export default defineConfig({
 			name: 'Flowchart',
 			formats: ['es'],
 			entry: 'src/index.js',
+      fileName: "index"
 		},
 		rollupOptions: {
 			external: ['vue'],
