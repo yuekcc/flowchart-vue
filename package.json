@@ -1,26 +1,26 @@
 {
-	"name": "@shoulddoit/flowchart-vue",
-	"version": "0.0.1",
-	"license": "MIT",
-	"main": "dist/index.js",
-	"type": "module",
-	"keywords": ["flowchart", "flowchart designer"],
-	"private": false,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build"
-	},
-	"dependencies": {
-		"d3-drag": "^3.0.0",
-		"d3-selection": "^3.0.0"
-	},
-	"peerDependencies": {
-		"vue": "^3.4.0"
-	},
-	"devDependencies": {
-		"@vitejs/plugin-vue": "^5.0.5",
-		"@vitejs/plugin-vue-jsx": "^4.0.0",
-		"typescript": "^5.5.4",
-		"vite": "^5.3.4"
-	}
+  "name": "@shoulddoit/flowchart-vue",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "keywords": ["flowchart", "flowchart designer"],
+  "private": false,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "d3-drag": "^3.0.0",
+    "d3-selection": "^3.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.4"
+  }
 }

@@ -48,60 +48,60 @@
 import '../assets/modal.css';
 
 export default {
-	props: {
-		visible: {
-			type: Boolean,
-			default: false,
-		},
-		node: {
-			type: Object,
-			default: null,
-		},
-	},
-	data() {
-		return {
-			nodeForm: { name: null, id: null, type: null, approver: [] },
-			approvers: [
-				{ id: 1, name: 'Joyce' },
-				{ id: 2, name: 'Allen' },
-				{ id: 3, name: 'Teresa' },
-			],
-		};
-	},
-	methods: {
-		handleClickSaveNode() {
-			this.$emit(
-				'update:node',
-				Object.assign(this.node, {
-					name: this.nodeForm.name,
-					type: this.nodeForm.type,
-					approvers: [Object.assign({}, this.nodeForm.approver)],
-				}),
-			);
-			this.$emit('update:visible', false);
-		},
-		handleClickCancelSaveNode() {
-			this.$emit('update:visible', false);
-		},
-		handleChangeApprover(e) {
-			this.nodeForm.approver = this.approvers.filter((i) => i.id === parseInt(e.target.value))[0];
-		},
-	},
-	watch: {
-		node: {
-			immediate: true,
-			handler(val) {
-				if (!val) {
-					return;
-				}
-				this.nodeForm.id = val.id;
-				this.nodeForm.name = val.name;
-				this.nodeForm.type = val.type;
-				if (val.approvers && val.approvers.length > 0) {
-					this.nodeForm.approver = val.approvers[0];
-				}
-			},
-		},
-	},
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+    node: {
+      type: Object,
+      default: null,
+    },
+  },
+  data() {
+    return {
+      nodeForm: { name: null, id: null, type: null, approver: [] },
+      approvers: [
+        { id: 1, name: 'Joyce' },
+        { id: 2, name: 'Allen' },
+        { id: 3, name: 'Teresa' },
+      ],
+    };
+  },
+  methods: {
+    handleClickSaveNode() {
+      this.$emit(
+        'update:node',
+        Object.assign(this.node, {
+          name: this.nodeForm.name,
+          type: this.nodeForm.type,
+          approvers: [Object.assign({}, this.nodeForm.approver)],
+        }),
+      );
+      this.$emit('update:visible', false);
+    },
+    handleClickCancelSaveNode() {
+      this.$emit('update:visible', false);
+    },
+    handleChangeApprover(e) {
+      this.nodeForm.approver = this.approvers.filter((i) => i.id === parseInt(e.target.value))[0];
+    },
+  },
+  watch: {
+    node: {
+      immediate: true,
+      handler(val) {
+        if (!val) {
+          return;
+        }
+        this.nodeForm.id = val.id;
+        this.nodeForm.name = val.name;
+        this.nodeForm.type = val.type;
+        if (val.approvers && val.approvers.length > 0) {
+          this.nodeForm.approver = val.approvers[0];
+        }
+      },
+    },
+  },
 };
 </script>

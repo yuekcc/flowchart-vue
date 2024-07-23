@@ -32,58 +32,58 @@
 import '../assets/modal.css';
 
 export default {
-	props: {
-		visible: {
-			type: Boolean,
-			default: false,
-		},
-		connection: {
-			type: Object,
-			default: null,
-		},
-	},
-	data() {
-		return {
-			connectionForm: {
-				type: null,
-				sourceId: null,
-				sourcePosition: null,
-				destinationId: null,
-				destinationPosition: null,
-				name: null,
-				expression: null,
-			},
-		};
-	},
-	methods: {
-		async handleClickSaveConnection() {
-			this.$emit('update:visible', false);
-			this.$emit(
-				'update:connection',
-				Object.assign(this.connection, {
-					name: this.connectionForm.name,
-					type: this.connectionForm.type,
-					expression: this.connectionForm.expression,
-				}),
-			);
-		},
-		async handleClickCancelSaveConnection() {
-			this.$emit('update:visible', false);
-		},
-	},
-	watch: {
-		connection: {
-			immediate: true,
-			handler(val) {
-				if (!val) {
-					return;
-				}
-				this.connectionForm.id = val.id;
-				this.connectionForm.type = val.type;
-				this.connectionForm.name = val.name;
-				this.connectionForm.expression = val.expression;
-			},
-		},
-	},
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+    connection: {
+      type: Object,
+      default: null,
+    },
+  },
+  data() {
+    return {
+      connectionForm: {
+        type: null,
+        sourceId: null,
+        sourcePosition: null,
+        destinationId: null,
+        destinationPosition: null,
+        name: null,
+        expression: null,
+      },
+    };
+  },
+  methods: {
+    async handleClickSaveConnection() {
+      this.$emit('update:visible', false);
+      this.$emit(
+        'update:connection',
+        Object.assign(this.connection, {
+          name: this.connectionForm.name,
+          type: this.connectionForm.type,
+          expression: this.connectionForm.expression,
+        }),
+      );
+    },
+    async handleClickCancelSaveConnection() {
+      this.$emit('update:visible', false);
+    },
+  },
+  watch: {
+    connection: {
+      immediate: true,
+      handler(val) {
+        if (!val) {
+          return;
+        }
+        this.connectionForm.id = val.id;
+        this.connectionForm.type = val.type;
+        this.connectionForm.name = val.name;
+        this.connectionForm.expression = val.expression;
+      },
+    },
+  },
 };
 </script>

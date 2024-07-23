@@ -19,7 +19,8 @@
     }
   },
   "formatter": {
-    "lineWidth": 110
+    "lineWidth": 110,
+    "indentStyle": "space"
   },
   "javascript": {
     "formatter": {
