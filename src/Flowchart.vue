@@ -450,8 +450,8 @@ export default {
 			});
 		},
 		haveNodesSelectedConnectors(connection) {
-			const sourceNode = this.nodes.find((x) => x.id === connection.source.id);
-			const destinationNode = this.nodes.find((x) => x.id === connection.destination.id);
+			const sourceNode = this.internalNodes.find((x) => x.id === connection.source.id);
+			const destinationNode = this.internalNodes.find((x) => x.id === connection.destination.id);
 			return (
 				this.hasNodeConnector(sourceNode, connection.source.position) &&
 				this.hasNodeConnector(destinationNode, connection.destination.position)
